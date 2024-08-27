@@ -93,4 +93,7 @@ echo "$@"
 # Good luck!
 #
 # ADD YOUR CODE BELOW:
-
+for filepath in "$@"
+do
+   grep > $@ | wc
+done
