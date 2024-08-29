@@ -97,7 +97,8 @@
 for filepath in "$@"
 do
 	count="$(grep '>' $filepath | wc -l)"
-	echo "$count $filepath"
+    printf "%d %s\n" "$count" "$filepath"
     total=$((total + count))
 done
 echo $total
+
