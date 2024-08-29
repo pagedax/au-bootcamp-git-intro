@@ -63,7 +63,6 @@
 # files that were 'given to' this script. The variable "$@" will be very useful
 # for this. Let's take a look at what it gives us:
 
-echo "$@"
 
 # How are you going to work with each file path?
 # HINT: for loop (remember "for do done"?)
@@ -93,8 +92,12 @@ echo "$@"
 # Good luck!
 #
 # ADD YOUR CODE BELOW:
+
+
 for filepath in "$@"
 do
-	count="$(grep '>' $@ | wc -l)"
-	echo "$@: $count"
+	count="$(grep '>' $filepath | wc -l)"
+	echo "$count $filepath"
+    total=$((total + count))
 done
+echo $total
