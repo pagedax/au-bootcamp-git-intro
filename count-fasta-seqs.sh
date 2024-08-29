@@ -95,5 +95,6 @@ echo "$@"
 # ADD YOUR CODE BELOW:
 for filepath in "$@"
 do
-    echo -n "$(grep '>' $@ | wc -l) $@"
+	count="$(grep '>' $@ | wc -l)"
+	echo "$@: $count"
 done
