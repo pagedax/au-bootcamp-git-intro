@@ -13,12 +13,12 @@
 #
 #          >RMB3263_Cyrtodactylus_philippinicus_Negros
 #          CGGGCCCATACCCCGAAAATGTTGGTATAAACCCCTTCCTATACTAATAAACCCCATTATTTGATCACTATTACTAAC
-#          
+#
 #          >CWL052_Cyrtodactylus_philippinicus_Negros
 #          CGGGCCCATACCCCGAAAATGTTGGTATAAACCCCTTCCTATACTAATAAACCCCATTATTTGATCACTATTACTAAC
 #
 #          If you run this script on this fasta file, you want to get the
-#          following output:          
+#          following output:
 #
 #          $ sh count-fasta-seqs.sh example-seqs1.fasta
 #          2 example-seqs1.fasta
@@ -29,15 +29,15 @@
 #
 #          >RMB7155_Sphenomorphus_arborens_Negros
 #          ATGAACCCCATTATAACCTCCCTCATTTTATCAAGCCTGGCCCTTGGAACCGTAATCACACTAACAAGCTACCACTGA
-#          
+#
 #          >RMB7156_Sphenomorphus_arborens_Negros
 #          ATGAACCCCATTATAACCTCCCTCATTTTATCAAGCCTGGCCCTTGGAACCGTAATCACACTAACAAGCTACCACTGA
-#          
+#
 #          >RMB7163_Sphenomorphus_arborens_Negros
 #          ATGAACCCCATTATAACCTCCCTCATTTTATCAAGCCTGGCCCTTGGAACCGTAATCACACTAACAAGCTACCACTGA
 #
 #          If you run this script on BOTH fasta files, you want to get the
-#          following output:          
+#          following output:
 #
 #          $ sh count-fasta-seqs.sh example-seqs1.fasta example-seqs2.fasta
 #          2 example-seqs1.fasta
@@ -75,8 +75,8 @@ echo "$@"
 # To count the number of sequences in each file, I recommend you checkout
 # 'grep' and 'wc':
 #
-#   $ man grep 
-#   $ man wc 
+#   $ man grep
+#   $ man wc
 #
 # WARNING about 'grep': ALWAYS quote the string that you are trying to find!
 # For example, do:
@@ -88,12 +88,12 @@ echo "$@"
 # To keep a tally of the total number of sequences across all files, 'expr'
 # might be useful:
 #
-#   $ man expr 
+#   $ man expr
 #
 # Good luck!
 #
 # ADD YOUR CODE BELOW:
 for filepath in "$@"
 do
-   grep > $@ | wc
+    echo -n "$(grep '>' $@ | wc -l) $@"
 done
